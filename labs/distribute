@@ -1,0 +1,313 @@
+#!/usr/bin/perl -w
+
+use strict;
+use XML::Simple;
+#use Data::Dumper;
+#use XML::Dumper;
+
+my $conffile = "/usr/local/etc/hosts.xml";
+
+#commands and what to do: [distribute?, has_args?, function reference]
+my %commands = (
+"run"		=> [1, 1, \&command_run, "run <command [args]> : runs command on many nodes"],
+"copy"		=> [1, 1, \&command_copy, "copy file [file...] : copy files on many nodes, in /root"],
+"cleanup"	=> [1, 0, \&command_cleanup, "cleanup : cleans up files in /home/student[1]"],
+"wakeup"	=> [1, 0, \&command_wakeup, "wakeup : wakes up many nodes using etherwake"],
+"shutdown"	=> [1, 0, \&command_shutdown, "shutdown : runs shutdown command on many nodes"],
+"quit"		=> [0, 0, \&command_quit, "quit :  quits this program"],
+"help"		=> [0, 0, \&command_help, "help : displays help"],
+"room"		=> [0, 0, \&command_room, "room : shows and selects rooms"],
+"internet"	=> [0, 0, \&command_internet, "internet : sets up firewall rules to allow internet access"],
+"nointernet"	=> [0, 0, \&command_nointernet, "nointernet : sets up firewall rules to deny internet access"],
+"list"		=> [1, 0, \&command_list, "list : list computers in room"],
+);
+use constant CMD_DISTRIBUTE => 0; # runs distributed or not
+use constant CMD_HASARGS => 1;    # has at least one argument
+use constant CMD_FUNC => 2;       # reference to command function
+use constant CMD_HELP => 3;       # help text
+
+my @known_rooms = ("b528a", "b528b");
+my @selected_rooms = ();
+
+my %subnet_bcast = (
+"b528a" => "172.16.9.255",
+"b528b" => "172.16.3.255",
+);
+
+#should be in a module..
+sub read_xml($ $ $)
+{
+	my ($filename,$elemname, $valueattr) = @_;
+	my $xml = undef;
+	my $xs;
+
+	if (-e $filename) {
+		$xs = new XML::Simple(KeyAttr => 0, ForceArray => [$elemname]);
+		if (defined($valueattr)) {
+			$xml = $xs->XMLin($filename, ValueAttr =>[$valueattr]);
+		} else {
+			$xml = $xs->XMLin($filename);
+		}
+	}
+	return $xml;
+}
+
+# command routines
+sub command_run($$)
+{
+	my ($href, $cmd) = @_;
+	unless (defined($cmd)) {
+		print "Use: run <commnad>\n";
+		return;
+	}
+	my @args = split(/\s/, $cmd);
+	system ('ssh', '-q', '-l', 'root',
+		'-o', 'CheckHostIP no',
+		'-o', 'StrictHostKeyChecking no',
+		'-o', 'ForwardX11 no',
+		'-o', 'HashKnownHosts no',
+		'-o', 'BatchMode yes',
+		$href->{ip}, @args);
+	my $exit_value = $? >> 8;
+	print STDERR "$href->{ip}: ";
+	if ($? == -1) {
+		print STDERR "system() failed: $!\n";
+	} elsif ($? & 0x7f) {
+		print STDERR "interrupted by signal ", $? & 0x7f, "\n";
+	} elsif ($exit_value == 255) {
+		print STDERR "ssh returned error\n";
+	} else {
+		print STDERR "ok (code $exit_value)\n";
+	}
+}
+
+sub command_copy($$)
+{
+	my ($href, $files) = @_;
+	unless (defined($files)) {
+		print "Use: copy <file> ...\n";
+		return;
+	}
+	my @flist = split(/\s/, $files);
+	system ('scp', 
+                '-o', 'BatchMode yes',
+                '-o', 'CheckHostIP no',
+                '-o', 'StrictHostKeyChecking no',
+                '-o', 'ForwardX11 no',
+                '-o', 'HashKnownHosts no',
+		'-r', @flist, "root\@" . $href->{ip} . ":");
+}
+
+sub command_wakeup($)
+{
+	my $href = shift;
+	if (!defined($href->{mac})) {
+		print "Mac address not defined for host ",$href->{ip},"\n";
+		return;
+	}
+	system ('wakeonlan', '-i', $subnet_bcast{$href->{room}}, $href->{mac});
+}
+
+sub command_list($)
+{
+	my $href = shift;
+	print "station ip=$href->{ip} mac=$href->{mac} room=$href->{room} role=$href->{role}\n"
+}
+
+sub command_shutdown($)
+{
+	my $href = shift;
+	command_run($href, "shutdown -P now");
+}
+
+sub command_internet()
+{
+	foreach my $room (@selected_rooms) {
+        	system ('ssh', '-q', '-l', 'proxyctl',
+        	#        '-o', 'CheckHostIP no',
+        	#        '-o', 'StrictHostKeyChecking no',
+        	        '-o', 'ForwardX11 no',
+        	        '-o', 'HashKnownHosts no',
+        	        '-o', 'BatchMode yes',
+        	        "oldfoot.cs.upt.ro", "allow", "$room");
+	}
+
+}
+
+sub command_nointernet()
+{
+	foreach my $room (@selected_rooms) {
+        	system ('ssh', '-q', '-l', 'proxyctl',
+        	#        '-o', 'CheckHostIP no',
+        	#        '-o', 'StrictHostKeyChecking no',
+        	        '-o', 'ForwardX11 no',
+        	        '-o', 'HashKnownHosts no',
+        	        '-o', 'BatchMode yes',
+        	        "oldfoot.cs.upt.ro", "deny", "$room");
+	}
+}
+
+sub command_cleanup($)
+{
+	my $href = shift;
+	command_run($href, "dcop --all-sessions --all-users ksmserver default logout 0 0 0 >/dev/null 2>/dev/null & sleep 1 ; pkill -9 -u student,student1 ; rm -rf /home/student*/* ; rm -rf /home/student*/.local/share/Trash/info/* ; rm -rf /home/student*/.local/share/Trash/files/*");
+}
+
+sub command_quit()
+{
+	exit(0);
+}
+
+sub command_help()
+{
+	my $cmd;
+	foreach $cmd (sort keys %commands) {
+		print $commands{$cmd}[CMD_HELP],"\n";
+	}
+}
+
+# print a list of rooms; if arg is 0, print all known rooms
+# if arg is 1, prints currently selected rooms
+
+sub print_rooms($)
+{
+	my $type = shift;
+
+	my ($room, $roomlist);
+
+	$roomlist = \@selected_rooms;
+	$roomlist = \@known_rooms if ($type == 0);
+
+	if ($#{$roomlist} == -1) {
+		print "\tnone.\n";
+	} else {
+		my $i = 0;
+		foreach $room (@{$roomlist}) {
+			print "\t";
+			print $i++, ". " if ($type == 0);
+			print $room,"\n";
+		}
+	}
+}
+
+sub command_room()
+{
+	my $select;
+	# Print selected rooms
+	print "Currently selected rooms:\n";
+	print_rooms(1);
+	print "Select rooms. Enter multiple rooms as 1 4 6. Leave blank to quit selection:\n";
+	print_rooms(0);
+	$select = <STDIN>;
+	chomp($select);
+	$select =~ s/^\s+//;
+	my @rooms = split(/\s+/, $select);
+	return if ( $#rooms == -1);
+	my $r;
+	@selected_rooms = ();
+#print "r#: $#rooms\n";
+	foreach $r (@rooms) {
+		next unless ($r =~ /\d+/);
+		next if ($r > $#known_rooms);
+#print "debug: $r\n";
+		push(@selected_rooms, $known_rooms[$r]);
+	}
+	print "You have selected:\n";
+	print_rooms(1);
+}
+
+############
+
+sub print_prompt()
+{
+	print "\n>>> ";
+}
+
+
+# main
+sub main()
+{
+	my ($hosts_xml, $hosts_ref);
+	# read list of workstations which run satellites
+	$hosts_xml = read_xml($conffile, "host", undef);
+	if (!$hosts_xml) {
+		print ("could not read hosts.xml\n");
+		return 1;
+	}
+	$hosts_ref = $hosts_xml->{host};
+
+	print_prompt();
+	while(<STDIN>) {
+		chomp();
+		next if (/^\s*$/);
+		unless (/^([a-z]+)(\s+(.+))?\s*$/) {
+			print "Bad line: $_\n";
+			print_prompt();
+			next;
+		}
+		my $cmd = $1;
+		my $args = $3;
+		unless (defined($commands{$cmd})) {
+			print "$cmd: Unknown command\n";
+			print_prompt();
+			next;
+		}
+		if ($commands{$cmd}[CMD_HASARGS] == 1 &&
+				!defined($args)) {
+			print "Command $cmd needs argument\n";
+			print_prompt();
+			next;
+		}
+		if ($commands{$cmd}[CMD_DISTRIBUTE] == 0) {
+			# "local" commands, that do not run fro each node
+			&{$commands{$cmd}[CMD_FUNC]}($args);
+		}
+		else {
+			# "distributed" commands, that run for each node
+
+			# construct list of hosts to run for
+			my ($href, $room, $room_found, $pid, $children);
+			$children = 0;
+			foreach $href (@{$hosts_ref}) {
+				next unless (defined($href->{room}));
+				$room_found=0;
+				foreach $room (@selected_rooms) {
+					if ($href->{room} eq $room) {
+						$room_found = 1;
+						last;
+					}
+				}
+				next unless ($room_found == 1);
+				next unless (defined($href->{role}) &&
+						($href->{role} eq 'client' ||
+						$href->{role} eq 'server'));
+
+				unless (defined($href->{ip})) {
+					print "Host without ip in conf file\n";
+					next;
+				}
+				print "Running <$cmd: $_> on ", $href->{ip},
+						" :\n";
+				$pid = fork();
+				if (! defined($pid)) {
+					print "Error, couldn't fork()!\n";
+					last;
+				}
+				if ($pid == 0) {
+					&{$commands{$cmd}[CMD_FUNC]}($href, $args);
+					exit(0);
+				}
+				$children++;
+			}
+			for (0 .. $children) {
+				wait();
+			}
+		}
+		print_prompt();
+	}
+}
+
+###
+
+main();
+exit(0);
