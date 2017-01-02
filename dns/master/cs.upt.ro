@@ -1,0 +1,385 @@
+$ORIGIN cs.upt.ro.
+                IN	NS      ns.cs.upt.ro.
+		IN	NS	ns.upt.ro.
+		IN	NS	ns2.upt.ro.
+		IN	MX	10 mx1.cs.upt.ro.
+		IN	MX	20 mx2.cs.upt.ro.
+		IN	A	193.226.12.14
+ns		IN	A	193.226.12.13
+ns1		IN	A	193.226.12.13
+ns2		IN	A	193.226.12.3
+mx1		IN	A	193.226.12.15
+mx2		IN	A	193.226.12.15
+
+; Aliases for public services
+mail		IN	CNAME	bigfoot
+pop		IN	CNAME	bigfoot
+pop3		IN	CNAME	bigfoot
+imap		IN	CNAME	bigfoot
+smtp		IN	CNAME	bigfoot
+
+; aliases for web server virtualhosts
+www		IN	CNAME	pig
+w3		IN	CNAME	pig
+oldwww		IN	CNAME	bigfoot
+webmail		IN	CNAME	pig
+labs		IN	CNAME	bigfoot
+emuco		IN	CNAME	pig
+support		IN	CNAME	pig
+scss		IN	CNAME	bigfoot
+solist		IN	CNAME	amper
+axys		IN	CNAME	pig
+icsm2010	IN	CNAME	dijkstra
+crisis2011	IN	CNAME	dijkstra
+registration-crisis2011	IN	CNAME	dijkstra
+mobipower	IN	CNAME	pig
+icsm2010podcast	IN	CNAME	allergy10
+
+; our most beloved CS servers
+dilbert1	IN      A       193.226.12.1
+dogbert		IN	A	193.226.12.3
+catbert		IN	A	193.226.12.4
+ratbert		IN	A	193.226.12.5
+mgmt		IN	A	193.226.12.6
+
+;decanat.ac.upt.ro -- .7
+pointy		IN	A	193.226.12.8
+asok		IN	A	193.226.12.9
+wally		IN	A	193.226.12.10
+alice		IN	A	193.226.12.11
+oldfoot		IN	A	193.226.12.12
+bigfoot		IN	A	193.226.12.13
+bigfoot		IN	MX	10 mx1.cs.upt.ro.
+pig		IN	A	193.226.12.14
+
+; DMZ
+forth		IN	A	193.226.12.15
+hermes		IN	A	193.226.12.16
+svn		IN	A	193.226.12.17
+
+; Comsisie acrediatare
+comisie		IN	A	193.226.12.35
+
+; DSPLabs
+solaris		IN	A	193.226.12.129
+sirius		IN	A	193.226.12.130
+cassiopeia	IN	A	193.226.12.131
+orion		IN	A	193.226.12.132
+nexus		IN	A	193.226.12.133
+nebula          IN      A       193.226.12.134
+vega            IN      A       193.226.12.135
+aurora          IN      A       193.226.12.136
+ganymede        IN      A       193.226.12.137
+dsplabs         IN      A       193.226.12.138
+                IN      MX      10 dsplabs
+                IN      MX      20 mail-in.upt.ro.
+
+
+; Jurca
+cyan		IN	A	193.226.12.81
+duke		IN	A	193.226.12.83
+cyan2		IN	A	193.226.12.177
+prn518		IN	A	193.226.12.178
+
+; B420 - M. Vladutiu
+b420-c          IN      A       193.226.12.102
+pegasus         IN      A       193.226.12.103
+
+;Marius Crisan
+mind1           IN      A       193.226.12.104
+mind2           IN      A       193.226.12.105
+mind3           IN      A       193.226.12.106
+mind4           IN      A       193.226.12.107
+mind5           IN      A       193.226.12.108
+mind6           IN      A       193.226.12.109
+
+; Mierlutiu
+segovia		IN	A	193.226.12.149
+jean-luc	IN	A	193.226.12.150
+sipot		IN	A	193.226.12.151
+
+; V. Cretu
+astra		IN	A	193.226.12.160
+astra2		IN	A	193.226.12.161
+
+; Secretariat CS
+secretariat1	IN	A	193.226.12.158
+secretariat2	IN	A	193.226.12.159
+
+; B420
+apollo		IN	A	193.226.12.18
+sigma		IN	A	193.226.12.19
+
+; ???
+mk		IN	A	193.226.12.24
+mk2		IN	A	193.226.12.47
+
+; 25 - rezervat Doru Todinca
+dt		IN	A	193.226.12.25
+
+
+; b 528 a&b
+dpi		IN	A	193.226.12.160
+lumen		IN	A	193.226.12.161
+watt		IN	A	193.226.12.162
+baud		IN	A	193.226.12.163
+bit		IN	A	193.226.12.164
+bla5		IN	A	193.226.12.165	
+parsec		IN	A	193.226.12.166
+volt		IN	A	193.226.12.168
+kelvin		IN	A	193.226.12.169
+ohm		IN	A	193.226.12.170
+inch		IN	A	193.226.12.171
+bar		IN	A	193.226.12.172
+
+; G. Ciobanu
+politerm	IN	A	193.226.12.173
+
+; Ioana Sora
+winstonel	IN	A	193.226.12.174
+
+;ruter wireless b528
+rtr528		IN	A	193.226.12.175
+
+;
+farad		IN	A	193.226.12.176
+
+; ruter wireless b623
+rtr623		IN	A	193.226.12.179
+
+; Naghiu Florica
+naghiu		IN	A	193.226.12.180
+
+;
+amper		IN	A	193.226.12.181
+newton		IN	A	193.226.12.182
+decibel		IN	A	193.226.12.183
+
+;
+xerox-secretariat	IN	A	193.226.12.184
+
+; loose & marinescu
+lrg		IN	CNAME	dijkstra.cs.upt.ro.
+ceres		IN	A	193.226.12.44
+
+; Glita Seba
+gseba-b527		IN	A	193.226.12.187
+
+; Georgiana Macariu
+georgiana	IN	A	193.226.12.59
+printer-b527	IN	A	193.226.12.77
+
+; b528
+litru		IN	A	193.226.12.203
+acru		IN	A	193.226.12.204
+tesla		IN	A	193.226.12.205
+joule 		IN	A	193.226.12.206
+gram		IN	A	193.226.12.207
+
+;Dan Pescaru
+dexter		IN	A	193.226.12.31
+wsn		IN	A	193.226.12.57
+dw		IN	A	193.226.12.58
+
+; ???
+lp		IN	A	193.226.12.30
+		IN	HINFO	HP "laserjet 3si"
+
+; b625
+spooky		IN	A	193.226.12.50
+
+; Marius Minea
+firenze		IN	A	193.226.12.67
+altius		IN	A	193.226.12.254
+
+; Secretariat
+snoopy		IN	A	193.226.12.99
+petofi		IN	A	193.226.12.91
+
+; la Marius Crisan 
+fs419		IN	A	193.226.12.27
+
+;PC-uri in B419 (???)
+s1b419		IN	A	193.226.12.71
+s2b419		IN	A	193.226.12.72
+s3b419		IN	A	193.226.12.73
+s4b419		IN	A	193.226.12.74
+s5b419		IN	A	193.226.12.75
+s6b419		IN	A	193.226.12.76
+
+;PC-uri B418, fost 623 (???)
+b418-1		IN	A	193.226.12.51
+b418-2		IN	A	193.226.12.52
+b418-3		IN	A	193.226.12.53
+b418-4		IN	A	193.226.12.54
+b418-5		IN	A	193.226.12.55
+b418-6		IN	A	193.226.12.56
+b418-7		IN	A	193.226.12.45
+
+;pc-uri in b623
+b623server      IN      A       193.226.12.110
+
+;pc-uri in b529
+sylvester	IN	A	193.226.12.62
+tweety		IN	A	193.226.12.63
+pinky           IN      A       193.226.12.112
+leghorn         IN      A       193.226.12.113
+foghorn         IN      A       193.226.12.114
+tom	        IN      A       193.226.12.115
+johnnybravo     IN      A       193.226.12.116
+coyote          IN      A       193.226.12.117
+jerry           IN      A       193.226.12.118
+roadrunner	IN	A	193.226.12.119
+DuffyDuck	IN	A	193.226.12.120
+BugsBunny	IN	A	193.226.12.121
+ElmerFudd	IN	A	193.226.12.122
+YosemiteSam	IN	A	193.226.12.123
+Marvin		IN	A	193.226.12.124
+
+; Horia Ciocarlie
+b530		IN	A	193.226.12.66
+b530plus	IN	A	193.226.12.65
+
+; b625 - Jian
+droopy		IN	A	193.226.12.68
+stupid		IN	A	193.226.12.69
+
+;Dan Cosma
+subspace	IN	A	193.226.12.82
+fork		IN	A	193.226.12.167
+
+;C. Holotescu
+cami		IN	A	193.226.12.70
+
+;PC-uri in A305
+zeus		IN	A	193.226.12.79
+
+; Dan Cosma - laptop
+voyager 	IN	A	193.226.12.166
+
+; ???
+b425		IN	A	193.226.12.100
+
+;
+; calculatoare in B414 - va ramane doar microlabs, se face masqarading
+matrix		IN	A	193.226.12.92
+microlabs	IN	A	193.226.12.93
+genius		IN	A	193.226.12.94
+
+; Strugaru
+strugaru	IN	A	193.226.12.95
+
+; Ioana Sora
+winston		IN	A	193.226.12.125
+
+;
+b501		IN	A	193.226.12.126
+
+; ASPC
+aspc		IN	A	193.226.12.145
+		IN	MX	10 aspc
+		IN	MX	20 mail
+
+; Micro Labs (trebe facuta ordine! -- peter)
+micro-01	IN	A	193.226.12.139
+micro-02	IN	A	193.226.12.140
+micro-03	IN	A	193.226.12.141
+micro-04	IN	A	193.226.12.142
+micro-05	IN	A	193.226.12.143
+micro-06	IN	A	193.226.12.144
+micro-08	IN	A	193.226.12.146
+micro-09	IN	A	193.226.12.147
+micro-10	IN	A	193.226.12.148
+
+; lab. B425 - CI
+cba		IN	A	193.226.12.189
+cbm		IN	A	193.226.12.190
+cbb		IN	A	193.226.12.191
+tranzistor	IN	A	193.226.12.193
+dioda		IN	A	193.226.12.192
+ttl		IN	A	193.226.12.194
+ecl		IN	A	193.226.12.195
+cmos		IN	A	193.226.12.196
+dtl		IN	A	193.226.12.197
+dopat		IN	A	193.226.12.198
+
+;Sala Internet Etajul I
+freenet		IN	A	193.226.12.32
+		IN	MX	10 freenet
+
+; B426 - M. Minea 
+b426-1		IN	A	193.226.12.33
+b426-rtr	IN	A	193.226.12.34
+
+; B527 (???)
+b527		IN	A	193.226.12.201
+
+; B515 - ASDN
+asdn1		IN	A	193.226.12.199
+asdn2		IN	A	193.226.12.200
+
+; Elena Doandes 
+silverglow	IN	A	193.226.12.202
+
+; Dan Ciresan
+b401a		IN	A	193.226.12.239
+
+; B520
+quantum		IN	A	193.226.12.208
+embryonics	IN	A	193.226.12.209
+dab		IN	A	193.226.12.210
+fosters		IN	A	193.226.12.211
+grolsch		IN	A	193.226.12.212
+kaiser		IN	A	193.226.12.213
+stella		IN	A	193.226.12.214
+leffe		IN	A	193.226.12.215
+budweiser	IN	A	193.226.12.216
+miller		IN	A	193.226.12.217
+tuborg		IN	A	193.226.12.218
+carlsberg	IN	A	193.226.12.219
+desperados	IN	A	193.226.12.220
+amstel		IN	A	193.226.12.221
+corona		IN	A	193.226.12.222
+heineken	IN	A	193.226.12.223
+
+; B513
+opritoiu	IN	A	193.226.12.224
+aquarius	IN	A	193.226.12.225
+pisces		IN	A	193.226.12.226
+aries		IN	A	193.226.12.227
+taurus		IN	A	193.226.12.228
+st02b418b	IN	A	193.226.12.229
+cancer		IN	A	193.226.12.230
+st05b418b	IN	A	193.226.12.231
+
+; Sebastian Glita
+st04b418b	IN	A	193.226.12.232
+;
+st01b418b	IN	A	193.226.12.233
+st06b418b	IN	A	193.226.12.234
+st03b418b	IN	A	193.226.12.235
+
+; Gabia
+gabia		IN	A	193.226.12.238
+
+; Liga AC
+ligaac		IN	A	193.226.12.98
+
+; b514 - LRG
+brooks		IN	A	193.226.12.241
+dijkstra	IN	A	193.226.12.242
+hoare		IN	A	193.226.12.243
+kay		IN	A	193.226.12.244
+knuth		IN	A	193.226.12.245
+allergy06	IN	A	193.226.12.246
+strachey	IN	A	193.226.12.248
+allergy09	IN	A	193.226.12.249
+allergy10	IN	A	193.226.12.250
+allergy11	IN	A	193.226.12.251
+allergy12	IN	A	193.226.12.252
+; Mihai Balint
+allergy07	IN	A	193.226.12.247
+
+;A109
+a109		IN	A	193.226.12.253
+

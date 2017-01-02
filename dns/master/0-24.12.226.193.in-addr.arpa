@@ -1,0 +1,293 @@
+1		IN	PTR	dilbert.cs.upt.ro.
+2		IN	PTR	liber.cs.upt.ro.
+3		IN	PTR	dogbert.cs.upt.ro.
+4		IN	PTR	catbert.cs.upt.ro.
+5		IN	PTR	ratbert.cs.upt.ro.
+6		IN	PTR	mgmt.cs.upt.ro.
+7		IN	PTR	decanat.ac.upt.ro.
+8		IN	PTR	pointy.cs.upt.ro.
+9		IN	PTR	asok.cs.upt.ro.
+10		IN	PTR	wally.cs.upt.ro.
+11		IN	PTR	alice.cs.upt.ro.
+12		IN	PTR	oldfoot.cs.upt.ro.
+13		IN	PTR	bigfoot.cs.upt.ro.
+14		IN	PTR	pig.cs.upt.ro.
+15		IN	PTR	forth.cs.upt.ro.
+16		IN	PTR	hermes.cs.upt.ro.
+17		IN	PTR	svn.cs.upt.ro.
+18		IN	PTR	apollo.cs.upt.ro.
+19		IN	PTR	sigma.cs.upt.ro.
+;20		IN	PTR	sipot.cs.upt.ro.
+;21		IN	PTR	petrica.cs.upt.ro.
+;22		IN	PTR	ice-9.cs.upt.ro.
+23		IN	PTR	hideg.altitudinebanat.ro.
+24		IN	PTR	nedeia.altitudinebanat.ro.
+
+; Doru Todinca
+25		IN	PTR	dt.cs.upt.ro.
+;26		IN	PTR	b517win1.cs.upt.ro.
+27		IN	PTR	fs419.cs.upt.ro.
+28		IN	PTR	plop.cs.upt.ro.
+29		IN	PTR	tempus5.cs.upt.ro.
+30		IN	PTR	lp.cs.upt.ro.
+31		IN	PTR	dexter.cs.upt.ro.
+32		IN	PTR	freenet.cs.upt.ro.
+; B 426 - Marius Minea
+33		IN	PTR	b426-1.cs.upt.ro.
+34		IN	PTR	b426-rtr.cs.upt.ro.
+35		IN	PTR	comisie.cs.upt.ro.
+;36-43
+; Radu Marinescu - server cvs, et caetera
+44		IN	PTR	ceres.cs.upt.ro.
+;
+45		IN	PTR	b418-7.cs.upt.ro.
+46		IN	PTR	xtb622.cs.upt.ro.
+47		IN	PTR	mk2.cs.upt.ro.
+48		IN	PTR	setc1.cs.upt.ro.
+49		IN	PTR	setc2.cs.upt.ro.
+50		IN	PTR	spooky.cs.upt.ro.
+51		IN	PTR	b418-1.cs.upt.ro.
+52		IN	PTR	b418-2.cs.upt.ro.
+53		IN	PTR	b418-3.cs.upt.ro.
+54		IN	PTR	b418-4.cs.upt.ro.
+55		IN	PTR	b418-5.cs.upt.ro.
+56		IN	PTR	b418-6.cs.upt.ro.
+57		IN	PTR	wsn.cs.upt.ro.
+
+; Dan Pescaru - data-warehouse
+58             IN      PTR   	dw.cs.upt.ro.
+
+; Georgiana Macariu
+59		IN	PTR	georgiana.cs.upt.ro.
+
+; Adrian Mihailescu
+60		IN	PTR	b522a.cs.upt.ro.
+;
+; prof Groza
+61		IN	PTR	groza.cs.upt.ro.
+
+62		IN	PTR	sylvester.cs.upt.ro.
+63		IN	PTR	tweety.cs.upt.ro.
+;
+64		IN	PTR	asterix.cs.upt.ro.
+65		IN	PTR	b530plus.cs.upt.ro.
+66		IN	PTR	b530.cs.upt.ro.
+67		IN	PTR	firenze.cs.upt.ro.
+68		IN	PTR	droopy.cs.upt.ro.
+69		IN	PTR	stupid.cs.upt.ro.
+70		IN	PTR	cami.cs.upt.ro.
+71              IN      PTR     s1b419.cs.upt.ro.
+72              IN      PTR     s2b419.cs.upt.ro.
+73              IN      PTR     s3b419.cs.upt.ro.
+74              IN      PTR     s4b419.cs.upt.ro.
+75              IN      PTR     s5b419.cs.upt.ro.
+76              IN      PTR     s6b419.cs.upt.ro.
+77		IN	PTR	printer-b527.cs.upt.ro.
+;
+78		IN	PTR	earp.cs.upt.ro.
+79		IN	PTR	zeus.cs.upt.ro.
+;80		IN	PTR	voyager.cs.upt.ro.
+81		IN	PTR	cyan.cs.upt.ro.
+82		IN	PTR	subspace.cs.upt.ro.
+83		IN	PTR	duke.cs.upt.ro.
+84		IN	PTR	cami2.cs.upt.ro.
+85		IN	PTR	s15b426.cs.upt.ro.
+86		IN	PTR	s16b426.cs.upt.ro.
+87		IN	PTR	s17b426.cs.upt.ro.
+88		IN	PTR	s18b426.cs.upt.ro.
+89		IN	PTR	s19b426.cs.upt.ro.
+90		IN	PTR	s20b426.cs.upt.ro.
+91		IN	PTR	petofi.cs.upt.ro.
+92		IN	PTR	matrix.cs.upt.ro.
+93		IN	PTR	microlabs.cs.upt.ro.
+94		IN	PTR	genius.cs.upt.ro.
+95		IN	PTR	strugaru.cs.upt.ro.
+;96		IN	PTR	mia.cs.upt.ro.
+;97		IN	PTR	belu.cs.upt.ro.
+98		IN	PTR	ligaac.cs.upt.ro.
+99		IN	PTR	snoopy.cs.upt.ro.
+100		IN	PTR	b425.cs.upt.ro.
+;101		IN	PTR	dd.cs.upt.ro.
+102		IN	PTR	b420-c.cs.upt.ro.
+103		IN	PTR	pegasus.cs.upt.ro.
+104		IN	PTR	mind1.cs.upt.ro.
+105		IN	PTR	mind2.cs.upt.ro.
+106		IN	PTR	mind3.cs.upt.ro.
+107		IN	PTR	mind4.cs.upt.ro
+108		IN	PTR	mind5.cs.upt.ro.
+109		IN	PTR	mind6.cs.upt.ro.
+110		IN	PTR	b623-1.cs.upt.ro.
+111		IN	PTR	upt-gw.cs.upt.ro.
+112             IN      PTR     pinky.cs.upt.ro.
+113             IN      PTR     leghorn.cs.upt.ro.
+114             IN      PTR     foghorn.cs.upt.ro.
+115             IN      PTR     tom.cs.upt.ro.
+116             IN      PTR     johnnybravo.cs.upt.ro.
+117             IN      PTR     coyote.cs.upt.ro.
+118             IN      PTR     jerry.cs.upt.ro.
+119             IN      PTR     roadrunner.cs.upt.ro.
+120             IN      PTR     DuffyDuck.cs.upt.ro.
+121             IN      PTR     BugsBunny.cs.upt.ro.
+122             IN      PTR     ElmerFudd.cs.upt.ro.
+123             IN      PTR     YosemiteSam.cs.upt.ro.
+124             IN      PTR     Marvin.cs.upt.ro.
+125		IN	PTR	winston.cs.upt.ro.
+126		IN	PTR	b501.cs.upt.ro.
+; rezervat broadcast/net
+;127
+;128
+129		IN	PTR	solaris.cs.upt.ro.
+130		IN	PTR	sirius.cs.upt.ro.
+131		IN	PTR	cassiopeia.cs.upt.ro.
+132		IN	PTR	orion.cs.upt.ro.
+133		IN	PTR	nexus.cs.upt.ro.
+134		IN	PTR	nebula.cs.upt.ro.
+135		IN	PTR	vega.cs.upt.ro.
+136		IN	PTR	aurora.cs.upt.ro.
+137		IN	PTR	ganymede.cs.upt.ro.
+138		IN	PTR	dsplabs.cs.upt.ro.
+139		IN	PTR	micro-01.cs.upt.ro.
+140		IN	PTR	micro-02.cs.upt.ro.
+141		IN	PTR	micro-03.cs.upt.ro.
+142		IN	PTR	micro-04.cs.upt.ro.
+143		IN	PTR	micro-05.cs.upt.ro.
+144		IN	PTR	micro-06.cs.upt.ro.
+145		IN	PTR	aspc.cs.upt.ro.
+; Gabriel Erzse
+146		IN	PTR	erzse-desktop.cs.upt.ro.
+147		IN	PTR	erzse-laptop.cs.upt.ro.
+;Mierlutiu
+;148		IN	PTR	micro-10.cs.upt.ro.
+149		IN	PTR	segovia.cs.upt.ro.
+150		IN	PTR	jean-luc.cs.upt.ro.
+151		IN	PTR	sipot.cs.upt.ro.
+;
+;152		IN	PTR	dbase.cs.upt.ro.
+;153		IN	PTR	foxpro.cs.upt.ro.
+;154		IN	PTR	postgresql.cs.upt.ro.
+;155		IN	PTR	access.cs.upt.ro.
+;156		IN	PTR	sybase.cs.upt.ro.
+
+; Gartner
+157		IN	PTR	gartner.cs.upt.ro.
+
+; Secretariat CS
+158		IN	PTR	secretariat1.cs.upt.ro.
+159		IN	PTR	secretariat2.cs.upt.ro.
+
+; v. cretu
+160		IN	PTR	astra.cs.upt.ro.
+161		IN	PTR	astra2.cs.upt.ro.
+;
+162		IN	PTR	watt.cs.upt.ro.
+163		IN	PTR	baud.cs.upt.ro.
+164		IN	PTR	bit.cs.upt.ro.
+; Infochiosc legitimatii baza 2
+165		IN	PTR	bla5.cs.upt.ro.
+; d. cosma
+166		IN	PTR	voyager.cs.upt.ro.
+167		IN	PTR	fork.cs.upt.ro.
+168		IN	PTR	volt.cs.upt.ro.
+; temporar - infochiosc
+169		IN	PTR	bla1.cs.upt.ro.
+170		IN	PTR	bla2.cs.upt.ro.
+171		IN	PTR	bla3.cs.upt.ro.
+172		IN	PTR	bla4.cs.upt.ro.
+;
+173		IN	PTR	politerm.cs.upt.ro.
+; Ioana Sora - laptop
+174		IN	PTR	winstonel.cs.upt.ro.
+; ruter wireless 528
+175		IN	PTR	rtr528.cs.upt.ro.
+; temporar Cristina Marinescu
+176		IN	PTR	cristinatmp.cs.upt.ro.
+; I jurca
+177		IN	PTR	cyan2.cs.upt.ro.
+178		IN	PTR	prn518.cs.upt.ro.
+; ruter wirelss b623
+179		IN	PTR	rtr623.cs.upt.ro.
+; Naghiu Florica
+180		IN	PTR	naghiu.cs.upt.ro.
+; IP secundar (alternativ la .173 pt. ca e folosit ilegal)
+181		IN	PTR	politerm2.cs.upt.ro.
+; nefolosite in 528 -- pt. a101, temporar
+182		IN	PTR	a101-1.cs.upt.ro.
+183		IN	PTR	a101-2.cs.upt.ro.
+;
+184		IN	PTR	xerox-secretariat.cs.upt.ro.	
+185		IN	PTR	lrg.cs.upt.ro.
+;186		IN	PTR	coca.cs.upt.ro.
+;
+187		IN	PTR	gseba-b527.cs.upt.ro.
+;
+189		IN	PTR	cba.cs.upt.ro.
+190		IN	PTR	cbm.cs.upt.ro.
+191		IN	PTR	cbb.cs.upt.ro.
+192		IN	PTR	dioda.cs.upt.ro.
+193		IN	PTR	tranzistor.cs.upt.ro.
+194		IN	PTR	ttl.cs.upt.ro.
+195		IN	PTR	ecl.cs.upt.ro.
+196		IN	PTR	cmos.cs.upt.ro.
+197		IN	PTR	dtl.cs.upt.ro.
+198		IN	PTR	dopat.cs.upt.ro.
+199		IN 	PTR	asdn1.cs.upt.ro.
+200		IN	PTR	asdn2.cs.upt.ro.
+201		IN	PTR	b527.cs.upt.ro.
+202		IN	PTR	silverglow.cs.upt.ro.
+
+;LigaAC
+203		IN	PTR	ligaacrtr.cs.upt.ro.
+204		IN	PTR	ligaac1.cs.upt.ro.
+205		IN	PTR	ligaac2.cs.upt.ro.
+206		IN	PTR	ligaac3.cs.upt.ro.
+207		IN	PTR	ligaac4.cs.upt.ro.
+;
+208		IN	PTR	quantum.cs.upt.ro.
+209		IN	PTR	embryonics.cs.upt.ro.
+210		IN	PTR	dab.cs.upt.ro.
+211		IN	PTR	fosters.cs.upt.ro.
+212		IN	PTR	grolsch.cs.upt.ro.
+213		IN	PTR	kaiser.cs.upt.ro.
+214		IN	PTR	stella.cs.upt.ro.
+215		IN	PTR	leffe.cs.upt.ro.
+216		IN	PTR	budweiser.cs.upt.ro.
+217		IN	PTR	miller.cs.upt.ro.
+218		IN	PTR	tuborg.cs.upt.ro.
+219		IN	PTR	carlsberg.cs.upt.ro.
+220		IN	PTR	desperados.cs.upt.ro.
+221		IN	PTR	amstel.cs.upt.ro.
+222		IN	PTR	corona.cs.upt.ro.
+223		IN	PTR	heineken.cs.upt.ro.
+224		IN	PTR	opritoiu.cs.upt.ro.
+225		IN	PTR	aquarius.cs.upt.ro.
+226		IN	PTR	pisces.cs.upt.ro.
+227		IN	PTR	aries.cs.upt.ro.
+228		IN	PTR	taurus.cs.upt.ro.
+229		IN	PTR	st02b418b.cs.upt.ro.
+230		IN	PTR	cancer.cs.upt.ro.
+231		IN	PTR	st05b418b.cs.upt.ro.
+232		IN	PTR	st04b418b.cs.upt.ro.
+233		IN	PTR	st01b418b.cs.upt.ro.
+234		IN	PTR	st06b418b.cs.upt.ro.
+235		IN	PTR	st03b418b.cs.upt.ro.
+;236		IN	PTR	rtr1.cs.upt.ro.
+;237		IN	PTR	rtr2.cs.upt.ro.
+238		IN	PTR	gabia.cs.upt.ro.
+239		IN	PTR	b401a.cs.upt.ro.
+;240
+; B418B
+241		IN	PTR	brooks.cs.upt.ro.	
+242		IN	PTR	dijkstra.cs.upt.ro.
+243		IN	PTR	hoare.cs.upt.ro.
+244		IN	PTR	kay.cs.upt.ro.
+245		IN	PTR	knuth.cs.upt.ro.
+246		IN	PTR	allergy06.cs.upt.ro.
+247		IN	PTR	allergy07.cs.upt.ro.
+248		IN	PTR	strachey.cs.upt.ro.
+249		IN	PTR	allergy09.cs.upt.ro.
+250		IN	PTR	allergy10.cs.upt.ro.
+251		IN	PTR	allergy11.cs.upt.ro.
+252		IN	PTR	allergy12.cs.upt.ro.
+;A109
+253		IN	PTR	a109.cs.upt.ro.
+254		IN	PTR	altius.cs.upt.ro.
